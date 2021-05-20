@@ -1,0 +1,32 @@
+    <div >
+        <h1 style="margin-bottom: -10px"><a href="#/user">Galesto</a></h1> <!-- to reduce the border-->
+        <p ng-if="isAuthenticated()" align="right" style="color: #243218">
+            {{loginTemplate}}
+        </p>
+    </div>
+
+
+<div class="container-fluid" >
+    <div class="row" float="left">
+        <div class="col-md-2 col-sm-2 sidebar2" style="background-color: rgba(0,0,0,0.4)" >
+            <div class="left-navigation" >
+
+                <ul ng-if="isAuthenticated()" class="list">
+                    <li><a href="#/user/search">Search</a></li>
+                    <li><a href="#/">Post</a></li>
+                    <li><a href="#/user/myposts">My Posts</a></li>
+                    <li><a href="#/user/mybids">My Bids</a></li>
+                    <li><a href="#/user/profile">Edit</a></li>
+                    <li><a href="#/logout">Logout</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+    <!--<div class="main-content">-->
+    <div>
+        <!--Central content goes here-->
+        <div  ui-view=""></div>
+    </div>
+</div>

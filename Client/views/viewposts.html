@@ -1,0 +1,26 @@
+<div class="container" float = "right">
+    <div class="col-lg-offset-2 col-md-9 col-sm-8">
+    <!--<div>-->
+        <div class="panel-body" >
+            <legend><i class="ion-clipboard"></i> Search Posts</legend>
+            <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+                <tr  ng-repeat="row in $data">
+                    <td onmouseover="(this.parentNode.style.backgroundColor = 'grey')"
+                        onmouseleave="(this.parentNode.style.backgroundColor ='#fefff7')"
+                        data-title="'Title'" filter="{title: 'text'}" sortable="'title'">{{row.title}}</td>
+                    <td onmouseover="(this.parentNode.style.backgroundColor = 'grey')"
+                        onmouseleave="(this.parentNode.style.backgroundColor ='#fefff7')"
+                        data-title="'Price'" filter="{price: 'number'}" sortable="'price'">{{row.price}}</td>
+                    <td onmouseover="(this.parentNode.style.backgroundColor = 'grey')"
+                        onmouseleave="(this.parentNode.style.backgroundColor ='#fefff7')"
+                        data-title="'No of Bids'" filter="{'bids.length': 'number'}" sortable="'bids.length'">{{row.bids.length}}</td>
+                    <td onmouseover="(this.parentNode.style.backgroundColor = 'grey')"
+                        onmouseleave="(this.parentNode.style.backgroundColor ='#fefff7')"
+                        data-title="'Created'" sortable="'createdAt'">{{convert(row.createdAt)}}</td>
+                    <td style="width: 20%"><button class="btn btn-primary" ng-click="view(row)">View</button>
+                    <button class="btn btn-primary" ng-click="delete(row)">Delete</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+.homebody {
+    background-image: url("../images/main6.jpg");
+}
+.panel-body{
+        float: right;
+       background: -webkit-linear-gradient(90deg, #fefff7 10%, #fff1e8 90%);
+       width:100%;height:100%
+}
+
+p {
+    color:#CCC;
+}
+
+.spacing {
+    padding-top:3px;
+    padding-bottom:3px;
+    overflow: hidden;
+}
+.middlePage {
+    width: 680px;
+    height: 500px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.logo {
+    color:#CCC;
+}
+
+.sociallink{
+    width:100%;
+}
+
+.socialimg{
+    width: inherit;
+    margin-bottom: 20px;
+    height: 35px;
+}
+
+.inputtype{
+    margin-bottom: 10px;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #d0c7c7;
+    background-color: transparent;
+}
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+.navbar-inverse {
+    background-color: #008cba;
+    border-color: #008cba;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #008cba;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #008cba;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar:focus {
+    background-color: #d0c7c7   ;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #9d9d9d;
+    background-color: transparent;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+.nav path {
+    fill: #fff;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: rgba(27, 34, 48, 0.3);
+}
+
+.view{
+    position: fixed;
+    top: 50px;
+    height: 100%;
+}
+
+p{
+    margin: 5px 0;
+}

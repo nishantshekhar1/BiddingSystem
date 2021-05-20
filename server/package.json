@@ -1,0 +1,22 @@
+{
+  "name": "wplproject",
+  "version": "0.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "async": "^1.5.2",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.0",
+    "colors": "^1.1.2",
+    "compression": "^1.6.2",
+    "cors": "^2.7.1",
+    "datetime": "2.0.0",
+    "express": "^4.13.4",
+    "jwt-simple": "^0.4.1",
+    "memcached": "^2.2.2",
+    "moment": "^2.12.0",
+    "mongoose": "^4.4.6",
+    "morgan": "^1.7.0",
+    "nodemailer": "^4.0.1",
+    "request": "^2.69.0"
+  }
+}

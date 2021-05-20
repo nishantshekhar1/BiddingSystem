@@ -1,0 +1,80 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+<!--   <div class="panel panel-default"> -->
+    <div class="col-lg-offset-2 col-md-9 col-sm-8" >
+        <div class="panel-body" style="width:100%;height:100%">
+            <legend><i class="ion-clipboard"></i>{{title}}</legend>
+            <form method="post" ng-submit="submit()">
+                <div class="form-group">
+                    <label class="control-label"><i class="ion-person"></i> Title</label>
+                    <input type="text" class="form-control" ng-model="post.title" required ng-disabled="disabled"/>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"><i class="ion-at"></i> Description</label>
+                    <textarea rows="4" cols="50" class="form-control" ng-model="post.description" ng-disabled="disabled"/>
+                    <!--<input type="text" multiple="multiple" class="form-control" ng-model="user.description"/>-->
+                </div>
+                <div class="form-group">
+                    <label class="control-label"><i class="ion-at"></i> Price</label>
+                    <input type="text" class="form-control" ng-model="post.price" ng-currency required ng-disabled="disabled"/>
+                </div>
+                <button class="btn btn-lg btn-success" ng-disabled="btndisable" ng-if="isMine">{{btnName}}</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div> </br> </div>
+<div class="container"  ng-if="disabled" >
+    <div class="col-lg-offset-2 col-md-9 col-sm-8 ">
+    <!--<div float="left">-->
+        <div class="panel-body" style="width:100%;height:100%" ng-if="tableDisplay">
+            <legend><i class="ion-clipboard"></i> View Bids for this post</legend>
+            <table ng-table="tableParams" class="table table-condensed table-bordered table-striped" >
+                <tr ng-repeat="row in $data">
+                    <td data-title="'Price'" filter="{price: 'text'}" sortable="'price'">{{row.price}}</td>
+                    <td data-title="'Description'" filter="{'description': 'text'}" sortable="'description'">{{row.description}}</td>
+                    <td data-title="'Created At'" sortable="'createdAt'">{{convert(row.createdAt)}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="panel-body" ng-if="!tableDisplay">
+            <legend><i class="ion-clipboard"></i> View Bids for this post</legend>
+            <h1>No Bids for this post</h1>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h3 class="modal-title" id="lineModalLabel">Bid for this post</h3>
+            </div>
+            <div class="modal-body">
+
+                <!-- content goes here -->
+                <form>
+                    <div class="form-group">
+                        <label for="price">Price: </label>
+                        <input type="text" class="form-control" id="price" ng-model="bidInfo.bidPrice" ng-currency>
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalDesc">Additional Information</label>
+                        <textarea type="text" class="form-control" id="additionalDesc" rows="5" cols="40" ng-model="bidInfo.additionalDesc"></textarea>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" id="bid" class="btn btn-default btn-hover-green" data-action="save" role="button" ng-click="saveBid()">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
